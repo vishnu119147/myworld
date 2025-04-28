@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tejuuu❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: 'Merriweather', serif;
+            background: linear-gradient(135deg, #ffcce6 0%, #ff99cc 50%, #ff66b3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            cursor: url('cursor.cur'), auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath fill='%23ff69b4' d='M50,0 C77.6,0 100,22.4 100,50 C100,77.6 77.6,100 50,100 C22.4,100 0,77.6 0,50 C0,22.4 22.4,0 50,0 Z M50,20 C61,20 70,29 70,40 C70,51 61,60 50,60 C39,60 30,51 30,40 C30,29 39,20 50,20 Z'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50' height='50' viewBox='0 0 50 50'%3E%3Cpath fill='%23ff1493' d='M25,0 C38.8,0 50,11.2 50,25 C50,38.8 38.8,50 25,50 C11.2,50 0,38.8 0,25 C0,11.2 11.2,0 25,0 Z M25,10 C30.5,10 35,14.5 35,20 C35,25.5 30.5,30 25,30 C19.5,30 15,25.5 15,20 C15,14.5 19.5,10 25,10 Z'/%3E%3C/svg%3E");
+            background-size: 100px 100px, 50px 50px;
+            opacity: 0.1;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                background-position: 0 0, 0 0;
+            }
+            100% {
+                background-position: 100px 100px, 50px 50px;
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            gap: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .image-group img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-group img:hover {
+            transform: scale(1.05);
+        }
+
+        .envelope-container {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            background: linear-gradient(145deg, #9b3091, #df40b0);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.6s ease;
+            cursor: pointer;
+        }
+
+        .flap {
+            position: absolute;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(145deg, #bf3aad, #db42bd);
+            transform-origin: bottom;
+            transition: transform 0.8s ease;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .body {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(145deg, #d83cce, #ff7aed);
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
+            z-index: -1;
+        }
+
+        .letter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 50%, #ffd6d6 100%);
+            padding: 40px 30px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.5s, transform 0.5s;
+            overflow-y: auto;
+            border-radius: 15px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .letter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23ff69b4' d='M10,0 L12.5,7.5 L20,10 L12.5,12.5 L10,20 L7.5,12.5 L0,10 L7.5,7.5 Z'/%3E%3C/svg%3E"),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 15 15'%3E%3Cpath fill='%23ff1493' d='M7.5,0 C8.3,0 9,0.7 9,1.5 C9,2.3 8.3,3 7.5,3 C6.7,3 6,2.3 6,1.5 C6,0.7 6.7,0 7.5,0 Z M7.5,12 C8.3,12 9,12.7 9,13.5 C9,14.3 8.3,15 7.5,15 C6.7,15 6,14.3 6,13.5 C6,12.7 6.7,12 7.5,12 Z M0,7.5 C0,6.7 0.7,6 1.5,6 C2.3,6 3,6.7 3,7.5 C3,8.3 2.3,9 1.5,9 C0.7,9 0,8.3 0,7.5 Z M12,7.5 C12,6.7 12.7,6 13.5,6 C14.3,6 15,6.7 15,7.5 C15,8.3 14.3,9 13.5,9 C12.7,9 12,8.3 12,7.5 Z'/%3E%3C/svg%3E");
+            background-size: 20px 20px, 15px 15px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .letter-content {
+            color: #333;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out 0.5s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .envelope.open .flap {
+            transform: rotateX(-180deg);
+        }
+
+        .envelope.open .letter {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .envelope.open .letter-content {
+            opacity: 1;
+        }
+
+        .seal {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 20% 20%, #ff6347, #800000);
+            border-radius: 50%;
+            position: absolute;
+            right: 20px;
+            top: 40px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: 'Dancing Script', cursive;
+            font-size: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .image-group {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .image-group img {
+                max-width: 150px;
+            }
+
+            .envelope {
+                height: 300px;
+            }
+
+            .letter-content {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="image-group">
+            <img src="pic11.jpg" alt="Picture 1">
+            <img src="pic19.jpg" alt="Picture 2">
+            <img src="pic3.jpg" alt="Picture 3">
+        </div>
+        
+        <div class="envelope-container">
+            <div class="envelope" onclick="toggleEnvelope()">
+                <div class="flap"></div>
+                <div class="body"></div>
+                <div class="seal">❤️</div>
+                <div class="letter">
+                    <div class="letter-content">
+                        Hey Tejuuuu❤️,<br><br>
+                        You know one thing, Adhu nanu Kannada kaliyake main motivation en gothaa??<br>
+                        Ninee! adhu ninu namballa but actual reason adhe. Nanige clg ali First gothira hudigi ninee.
+                        avathu nenp aythaa first time nanna na mumbai masti atra karkond bandharee ali ninu shreya idhiraa
+                        that was the first time! Nannige yako gothilla yavaglu nin indhaa positive vibes barthavee. I don't know why
+                        but nin atra bala mathdbeku antha ansithu avagle.But nanninge kannada baralla 🙃. Adhike bala sati mathadbeku antha idru
+                        nan mathadlilla , ninu adunna attitute antha thilkondiyaa. But bartha bartha life made us closeee. Innond nannige ee 4 years engineering
+                        life ali nanne ellarigu care torsidhu but nannige care torsidhu matra you are the only one. Nan nin bandhaga ella nim mane alle irthini
+                        may thats discomfortable for you , Nivu helake agalla . But yak andre nam mane bitre nannige ee world ali ellu comfort iralla
+                        antha comfort nim mane alle siktu it feels like home. I feel most comfortable with my amma only till I meet you. Nannige like 4+ days holiday sikidre
+                        mane ge hokthidhe nam amma beda andru but ivaga full holidays thara nan mane ge hog bodhu! but hogilla that is because of you
+                        en barthini bidamma teju barthale avl jothe irthini antha nam amma ge helthidhini. Nannige nin bitre ine yar idhare antha helthirthini
+                        adhu ninnige nija ansalla yak andre bala jana nan atra mathadthare idare antha but estu jana idru they dont care for me they just want card-messageand attention from
+                        me. But nin hange alla adhike i prefer you over them all. You are that special to me all the time i spent with you these years are worth of another 
+                        100 lifes for me. Nan Possesive nin bere avr jothe horage hogidru, mathadidru bala jealous aguthey but avrkinnu ninee important antha helthiyalla 
+                        avaga samadana aguthey. So please jothe nee iru Tejuuu❤️. Eee letter odidhmele call madi nin jothe ne irthini vishnu antha helbeku avage nin full odhiyaa antha arda 
+                        small test baikobeda, halbeda........
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-group">
+            <img src="pic1.jpg" alt="Picture 4">
+            <img src="pic7.jpg" alt="Picture 5">
+            <img src="pic9.jpg" alt="Picture 6">
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="https://pagalfree.com/musics/128-Manwa%20Laage%20-%20Happy%20New%20Year%20128%20Kbps.mp3" type="audio/mp3"></audio>
+    <script>
+        function toggleEnvelope() {
+            const envelope = document.querySelector('.envelope');
+            const music = document.getElementById('backgroundMusic');
+            
+            envelope.classList.toggle('open');
+            
+            if (envelope.classList.contains('open')) {
+                music.volume = 0.3;
+                music.play().catch(e => {
+                    console.log('Autoplay prevented: User interaction required');
+                });
+            } else {
+                music.pause();
+                music.currentTime = 0;
+            }
+        }
+    </script>
+</body>
+</html>
